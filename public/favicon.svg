@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Gothic tic tac toe icon">
+  <rect width="64" height="64" rx="12" fill="#0a0a0a" />
+  <rect x="10" y="10" width="44" height="44" rx="8" fill="none" stroke="#8b0000" stroke-width="2" />
+  <path d="M20 20h24" stroke="#cc0000" stroke-width="3" stroke-linecap="round" />
+  <path d="M20 32h24" stroke="#e8c9a0" stroke-width="3" stroke-linecap="round" />
+  <path d="M20 44h24" stroke="#cc0000" stroke-width="3" stroke-linecap="round" />
+  <path d="M20 20v24" stroke="#cc0000" stroke-width="3" stroke-linecap="round" />
+  <path d="M32 20v24" stroke="#e8c9a0" stroke-width="3" stroke-linecap="round" />
+  <path d="M44 20v24" stroke="#cc0000" stroke-width="3" stroke-linecap="round" />
+</svg>
