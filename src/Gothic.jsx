@@ -204,18 +204,40 @@ const gothicStyles = `
   }
 
   .board-grid::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background:
-      linear-gradient(to right, transparent calc(120px - 1px), #6b0000 calc(120px - 1px), #6b0000 calc(120px + 1px), transparent calc(120px + 1px),
-        transparent calc(240px - 1px), #6b0000 calc(240px - 1px), #6b0000 calc(240px + 1px), transparent calc(240px + 1px)),
-      linear-gradient(to bottom, transparent calc(120px - 1px), #6b0000 calc(120px - 1px), #6b0000 calc(120px + 1px), transparent calc(120px + 1px),
-        transparent calc(240px - 1px), #6b0000 calc(240px - 1px), #6b0000 calc(240px + 1px), transparent calc(240px + 1px));
-    pointer-events: none;
-    z-index: 1;
-    box-shadow: inset 0 0 30px rgba(0,0,0,0.5);
-  }
+  content: '';
+  position: absolute;
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to right,
+      transparent calc(33.33% - 1px),
+      #6b0000 calc(33.33% - 1px),
+      #6b0000 calc(33.33% + 1px),
+      transparent calc(33.33% + 1px),
+
+      transparent calc(66.66% - 1px),
+      #6b0000 calc(66.66% - 1px),
+      #6b0000 calc(66.66% + 1px),
+      transparent calc(66.66% + 1px)
+    ),
+
+    linear-gradient(
+      to bottom,
+      transparent calc(33.33% - 1px),
+      #6b0000 calc(33.33% - 1px),
+      #6b0000 calc(33.33% + 1px),
+      transparent calc(33.33% + 1px),
+
+      transparent calc(66.66% - 1px),
+      #6b0000 calc(66.66% - 1px),
+      #6b0000 calc(66.66% + 1px),
+      transparent calc(66.66% + 1px)
+    );
+
+  pointer-events:none;
+  z-index:1;
+}
 
   .square {
     width: 120px;
@@ -415,6 +437,87 @@ const gothicStyles = `
     animation: winnerAppear 0.5s ease-out forwards;
     opacity: 0;
   }
+
+  /* Mobile Responsive */
+@media (max-width: 700px) {
+
+  .gothic-root {
+    padding: 20px 10px;
+    overflow-x: hidden;
+  }
+
+  .game-container {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .game-title {
+    font-size: 2.2rem;
+    letter-spacing: 2px;
+  }
+
+  .title-ornament {
+    transform: scale(0.8);
+  }
+
+  .status-banner {
+    font-size: 0.7rem;
+    min-width: unset;
+    width: 90%;
+    padding: 10px 15px;
+  }
+
+
+  /* Hide Chronicle on phones */
+  .history-panel {
+    display: none;
+  }
+
+
+  .main-layout {
+    width: 100%;
+    justify-content: center;
+  }
+
+
+  .board-frame {
+    padding: 12px;
+  }
+
+
+  .board-grid {
+  width: min(85vw,360px);
+  height: min(85vw,360px);
+
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: repeat(3,1fr);
+}
+
+
+  .square {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  height: 100%;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  font-size: clamp(2rem, 15vw, 3.5rem);
+}
+
+
+  .reset-btn {
+    min-width: 170px;
+    padding: 10px 20px;
+  }
+
+
+  .winner-text {
+    font-size: 3rem;
+  }
+
+}
 `;
 
 const WINNING_LINES = [
